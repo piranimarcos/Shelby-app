@@ -7,7 +7,7 @@
 	<ion-content class="padding">
 		
 		<ion-list show-reorder="data.showReorder">
-			<ion-item ng-repeat="dato in detalles" class="item-thumbnail-left item-text-wrap" ng-click="toggleDescripcion(dato)">
+			<ion-item ng-repeat="dato in detalles" class="item-thumbnail-left item-text-wrap" ng-click="toggleDescripcion(dato)" ng-class="{'noresumido' : dato.resumido}">
 				<img src="img/recortes/{{dato.foto}}">
 				<h3>{{dato.titulo}}</h3>
 				<p ng-show="!dato.resumido">{{dato.descripcion | limitTo: 85}} {{dato.descripcion.length > 85 ? '&hellip;':''}}</p>

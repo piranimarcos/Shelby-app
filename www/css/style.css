@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.noresumido{
+  background-color: #fdf2d1 !important;
+}
+.noresumido .item-content{
+  background-color: transparent;
+}

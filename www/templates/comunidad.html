@@ -1,7 +1,14 @@
 <ion-view view-title="Comunidad">
-	<ion-content class="padding">
-		<h2>Comunidad</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum perferendis quia sint a neque officia esse. Voluptatibus eveniet, consequuntur. Ab cumque esse error fuga dignissimos tenetur aliquam facilis, placeat architecto!Dolorum inventore soluta, nesciunt adipisci incidunt at explicabo, eum beatae debitis molestias error quibusdam voluptatibus optio! Porro aspernatur iure impedit voluptatum nemo blanditiis temporibus vero. Saepe laborum delectus, fugit in.</p>
+	<ion-content>
+		
+		<ion-list>
+			<ion-item class="item-avatar item-icon-right" href="#" ng-repeat="item in usuarios">
+				<img src="img/users/{{item.foto}}" alt="">
+				<h2>{{item.nombre}} {{item.apellidos}}</h2>
+				<p>{{item.telefono}}</p>
+				<a class="button button-icon icon ion-ios-telephone" href="tel:{{item.telefono}}"></a>
+			</ion-item>
+		</ion-list>
+
 	</ion-content>
-	
 </ion-view>
