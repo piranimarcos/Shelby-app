@@ -28,7 +28,8 @@ angular.module('starter', ['ionic'])
       views:{
         //name que va en el ion-nav-view en tabs.html
         'tab-home':{
-          templateUrl: "templates/home.html"
+          templateUrl: "templates/home.html",
+          controller: "HomeCtrl"
         }
       }
     })
@@ -36,7 +37,8 @@ angular.module('starter', ['ionic'])
       url: '/auto',
       views:{
         'tab-auto':{
-          templateUrl: "templates/auto.html"
+          templateUrl: "templates/auto.html",
+          controller: "AutoCtrl"
         }
       }
     })
@@ -44,7 +46,8 @@ angular.module('starter', ['ionic'])
       url: '/comunidad',
       views:{
         'tab-comunidad':{
-          templateUrl: "templates/comunidad.html"
+          templateUrl: "templates/comunidad.html",
+          controller: "ComunidadCtrl"
         }
       }
     })
@@ -52,7 +55,8 @@ angular.module('starter', ['ionic'])
       url: '/datos',
       views:{
         'tab-datos':{
-          templateUrl: "templates/datos.html"
+          templateUrl: "templates/datos.html",
+          controller: "DatosCtrl"
         }
       }
     })
@@ -66,4 +70,18 @@ angular.module('starter', ['ionic'])
     })
 
   $urlRouterProvider.otherwise('/tab/home');
+})
+
+
+.controller('HomeCtrl', function($scope){
+  console.log("entrando en la home");
+})
+.controller('AutoCtrl', function($scope){
+  console.log("entrando en la auto");
+})
+.controller('ComunidadCtrl', function($scope){
+  console.log("entrando en la comunidad");
+})
+.controller('DatosCtrl', function($scope){
+  console.log("entrando en la datos");
 })
