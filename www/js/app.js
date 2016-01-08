@@ -51,6 +51,15 @@ angular.module('starter', ['ionic'])
         }
       }
     })
+    .state('tab.user', {
+      url: '/user/:id',
+      views:{
+        'tab-user':{
+          templateUrl: "templates/user.html",
+          controller: "UserCtrl"
+        }
+      }
+    })
     .state('tab.datos', {
       url: '/datos',
       views:{
@@ -100,6 +109,13 @@ angular.module('starter', ['ionic'])
   $http.get('js/data.json')
     .success(function(data){
       $scope.usuarios = data.usuarios;
+    });
+}])
+
+.controller('UserCtrl', ['$scope', '$http', '$state', function($scope, $http, $state){
+  $http.get('js/data.json')
+    .success(function(data){
+      $scope.data = data.usuarios[$state.params.id];
     });
 }])
 
