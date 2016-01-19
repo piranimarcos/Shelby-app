@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -123,12 +123,22 @@ angular.module('starter', ['ionic'])
     });
 }])
 
-.controller('DatosCtrl', function($scope){
+.controller('DatosCtrl', function($scope, $cordovaGeolocation) {
+
   $scope.getPosition = function(){
+    
     var form = this;
-    navigator.geolocation.getCurrentPosition(function(position){
-      form.posicion = position.coords.latitude + " | " + position.coords.longitude; 
-    });
+    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+    
+    $cordovaGeolocation
+      .getCurrentPosition(posOptions)
+      .then(function (position) {
+        var lat  = position.coords.latitude;
+        var long = position.coords.longitude;
+        form.posicion = lat + " | " + long;
+      }, function(err) {
+        form.posicion = err;
+      });
   }
 
   $scope.sendForm = function(){
